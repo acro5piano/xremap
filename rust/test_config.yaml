@@ -1,0 +1,10 @@
+windows:
+  - class_only:
+      - 'brave'
+      - 'chromium'
+      - 'firefox'
+      - 'code'
+      - 'terminal'
+    remaps:
+      - 'C-b': 'Left'
+      - 'C-f': 'Right'
