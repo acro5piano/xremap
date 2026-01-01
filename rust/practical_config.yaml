@@ -1,0 +1,27 @@
+# Practical config that works regardless of window detection issues
+windows:
+  # Global rules that apply to all windows (no class filter)
+  - remaps:
+      - 'C-b': 'Left'
+      - 'C-f': 'Right'
+      - 'C-p': 'Up'
+      - 'C-n': 'Down'
+      - 'C-a': 'Home'
+      - 'C-e': 'End'
+  
+  # Application-specific rules that work when window class is detected
+  - class_only:
+      - 'brave'
+      - 'chromium'
+      - 'firefox'
+    remaps:
+      - 'C-k': ['Shift-End', 'Ctrl-x']
+      - 'C-s': 'Ctrl-f'
+  
+  # Exclude terminals (when window class detection works)
+  - class_not:
+      - 'urxvt'
+      - 'terminal'
+      - 'alacritty'
+    remaps:
+      - 'C-w': ['Ctrl-Shift-Left', 'Ctrl-x']
